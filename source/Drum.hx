@@ -31,7 +31,7 @@ class Drum extends FlxSprite
 	{
 		super.update(elapsed);
 
-		if (y > 1080 + height)
+		if (y > Main.HEIGHT + height)
 		{
 			kill();
 		}

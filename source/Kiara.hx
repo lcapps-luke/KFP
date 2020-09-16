@@ -36,6 +36,10 @@ class Kiara extends FlxSprite
 		{
 			this.acceleration.x = MOVE_ACCELERATION;
 		}
+		else if (FlxG.mouse.pressed)
+		{
+			this.acceleration.x = (FlxG.mouse.x > Main.WIDTH / 2) ? MOVE_ACCELERATION : -MOVE_ACCELERATION;
+		}
 		else
 		{
 			this.acceleration.x = 0;
@@ -47,17 +51,15 @@ class Kiara extends FlxSprite
 			if (acceleration.x < 0)
 			{
 				acceleration.x = 0;
-				trace("zero acc");
 			}
 		}
 
-		if (this.x + this.width > 1920)
+		if (this.x + this.width > Main.WIDTH)
 		{
-			this.x = 1920 - this.width;
+			this.x = Main.WIDTH - this.width;
 			if (acceleration.x > 0)
 			{
 				acceleration.x = 0;
-				trace("zero acc");
 			}
 		}
 	}
