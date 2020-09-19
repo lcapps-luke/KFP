@@ -30,8 +30,8 @@ class PlayState extends FlxState
 		add(drumGroup);
 
 		kiara = new Kiara();
-		kiara.y = 1080 - (kiara.graphic.height - kiara.offset.y);
-		kiara.x = 1920 / 2;
+		kiara.y = Main.HEIGHT - (kiara.graphic.height - kiara.offset.y);
+		kiara.x = Main.WIDTH / 2;
 
 		add(kiara);
 
@@ -42,8 +42,8 @@ class PlayState extends FlxState
 		scoreText.text = "0";
 		scoreText.alignment = RIGHT;
 		scoreText.size = 144;
-		scoreText.y = 1080 - scoreText.size - 16;
-		scoreText.fieldWidth = 1920 - 16;
+		scoreText.y = Main.HEIGHT - scoreText.size - 16;
+		scoreText.fieldWidth = Main.WIDTH - 16;
 		add(scoreText);
 	}
 

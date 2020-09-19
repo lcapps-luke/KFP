@@ -6,7 +6,7 @@ import flixel.FlxSprite;
 class Kiara extends FlxSprite
 {
 	private static inline var ANIMATION_WALK:String = "Walk";
-	private static inline var MOVE_ACCELERATION:Float = 1920;
+	private static inline var MOVE_ACCELERATION:Float = Main.WIDTH;
 
 	public function new()
 	{
