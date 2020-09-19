@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<file id="data" value="data.tsv"/>
+	<file id="fonts" value="fonts.xml"/>
+
+	<locale id="en-GB" is_default="true" sort="0">
+		<contributors value="Luke Cann"/>
+		<ui language="Language" region="Region" accept="Okay"/>
+		<label id="en-GB" language="English" region="Great Britain"/>
+		<label id="es-ES" language="Spanish" region="Spain"/>
+		<label id="ja-JP" language="Japanese" region="Japan"/>
+	</locale>
+
+	<locale id="ja-JP" is_default="false" sort="1">
+		<contributors value="Luke Cann"/>
+		<ui language="言語" region="領域" accept="はい"/>
+		<label id="en-GB" language="英語" region="英吉利"/>
+		<label id="es-ES" language="スペイン語" region="スペイン"/>
+		<label id="ja-JP" language="日本語" region="日本"/>
+	</locale>
+
+	<locale id="es-ES" is_default="false" sort="2">
+		<contributors value="Luke Cann"/>
+		<ui language="Idioma" region="Región" accept="Bueno"/>
+		<label id="en-GB" language="Inglés" region="Gran Bretaña"/>
+		<label id="es-ES" language="Español" region="España"/>
+		<label id="ja-JP" language="Japonés" region="Japón"/>
+	</locale>
+
+</data>

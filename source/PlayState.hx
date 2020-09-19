@@ -18,6 +18,9 @@ class PlayState extends FlxState
 	private var score:Int = 0;
 	private var scoreText:FlxText;
 
+	public var timeLimit(default, default):Int = -1;
+	public var scoreToken(default, default):String = null;
+
 	override public function create()
 	{
 		super.create();
@@ -45,6 +48,14 @@ class PlayState extends FlxState
 		scoreText.y = Main.HEIGHT - scoreText.size - 16;
 		scoreText.fieldWidth = Main.WIDTH - 16;
 		add(scoreText);
+
+		if (timeLimit > 0)
+		{
+			var timer:Timer = new Timer(timeLimit, timeOver);
+			timer.x = 16;
+			timer.y = 16;
+			add(timer);
+		}
 	}
 
 	override public function update(elapsed:Float)
@@ -89,5 +100,13 @@ class PlayState extends FlxState
 	private function createScoreIncrement():ScoreIncrement
 	{
 		return new ScoreIncrement();
+	}
+
+	private function timeOver():Void
+	{
+		var ss:SubmitScoreSubState = new SubmitScoreSubState();
+		ss.score = score;
+		ss.token = scoreToken;
+		openSubState(ss);
 	}
 }

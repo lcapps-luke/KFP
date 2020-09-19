@@ -1,0 +1,7 @@
+flag	content
+$PLAY	始める
+$SUBMIT_SCORE	スコアを提出する？
+$SUBMIT	参加する
+$CANCEL	キャンセル
+$NAME	名前
+$SCORE_HEADER	最近のハイスコア
