@@ -6,7 +6,8 @@ import flixel.FlxSprite;
 class Kiara extends FlxSprite
 {
 	private static inline var ANIMATION_WALK:String = "Walk";
-	private static inline var MOVE_ACCELERATION:Float = Main.WIDTH;
+	private static inline var MAX_SPEED:Float = Main.WIDTH / 2;
+	private static inline var MOVE_ACCELERATION:Float = MAX_SPEED * 4;
 
 	public function new()
 	{
@@ -17,8 +18,8 @@ class Kiara extends FlxSprite
 
 		animation.play(ANIMATION_WALK);
 
-		this.drag.x = MOVE_ACCELERATION * 2;
-		this.maxVelocity.x = MOVE_ACCELERATION / 2;
+		this.drag.x = MOVE_ACCELERATION;
+		this.maxVelocity.x = MAX_SPEED;
 
 		this.offset.set(400, 390);
 		this.setSize(135, 50);
