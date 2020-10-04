@@ -31,7 +31,9 @@ class SubmitScoreSubState extends FlxSubState
 		label.y = Main.HEIGHT / 4 - label.height / 2;
 		add(label);
 
-		nameInput = new FlxInputText(0, 0, Math.round(Main.WIDTH * 0.75), "anonymous", 144, 0xFFFFFF, 0x000000);
+		var savedName:String = Main.SAVE.data.name;
+
+		nameInput = new FlxInputText(0, 0, Math.round(Main.WIDTH * 0.75), savedName == null ? "anonymous" : savedName, 144, 0xFFFFFF, 0x000000);
 		nameInput.caretWidth = 10;
 		nameInput.maxLength = Main.NAME_MAX_LENGTH;
 		nameInput.x = Main.WIDTH / 8;
@@ -64,6 +66,9 @@ class SubmitScoreSubState extends FlxSubState
 			{
 				sanName = sanName.substring(0, Main.NAME_MAX_LENGTH);
 			}
+
+			Main.SAVE.data.name = sanName;
+			Main.SAVE.flush();
 
 			ScoreClient.submit(token, sanName, score, function(success:Bool)
 			{

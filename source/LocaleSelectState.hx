@@ -58,6 +58,9 @@ class LocaleSelectState extends FlxSubState
 
 	private function selectLocale(locale:String)
 	{
+		Main.SAVE.data.locale = locale;
+		Main.SAVE.flush();
+
 		Main.TONGUE.init(locale, function()
 		{
 			FlxG.resetState();
