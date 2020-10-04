@@ -10,7 +10,7 @@ class ScoreIncrement extends FlxText
 
 		alignment = RIGHT;
 		size = 144;
-		fieldWidth = 1920 - 16;
+		fieldWidth = Main.WIDTH - 16;
 
 		moves = true;
 
@@ -27,14 +27,14 @@ class ScoreIncrement extends FlxText
 	private function init()
 	{
 		y = -size;
-		velocity.y = 1080 * 2;
+		velocity.y = Main.HEIGHT * 2;
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
-		if (y > 1080)
+		if (y > Main.HEIGHT)
 		{
 			kill();
 		}

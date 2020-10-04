@@ -2,11 +2,11 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="kfp" file="kfp" main="Main" version="0.0.2" company="LC-Apps" />
+	<app title="kfp" file="kfp" main="Main" version="0.1.0" company="LC-Apps" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
-	<app preloader="flixel.system.FlxPreloader" />
+	<app preloader="Preloader" />
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
 	<set name="SWF_VERSION" value="11.8" />
@@ -39,10 +39,13 @@
 	<haxelib name="flixel-addons" />
 
 	<!--In case you want to use the ui package-->
-	<!--<haxelib name="flixel-ui" />-->
+	<haxelib name="flixel-ui" />
 
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
+
+	<haxelib name="firetongue" />
+	<haxelib name="datetime"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 

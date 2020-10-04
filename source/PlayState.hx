@@ -18,6 +18,9 @@ class PlayState extends FlxState
 	private var score:Int = 0;
 	private var scoreText:FlxText;
 
+	public var timeLimit(default, default):Int = -1;
+	public var scoreToken(default, default):String = null;
+
 	override public function create()
 	{
 		super.create();
@@ -30,8 +33,8 @@ class PlayState extends FlxState
 		add(drumGroup);
 
 		kiara = new Kiara();
-		kiara.y = 1080 - (kiara.graphic.height - kiara.offset.y);
-		kiara.x = 1920 / 2;
+		kiara.y = Main.HEIGHT - (kiara.graphic.height - kiara.offset.y);
+		kiara.x = Main.WIDTH / 2;
 
 		add(kiara);
 
@@ -42,9 +45,17 @@ class PlayState extends FlxState
 		scoreText.text = "0";
 		scoreText.alignment = RIGHT;
 		scoreText.size = 144;
-		scoreText.y = 1080 - scoreText.size - 16;
-		scoreText.fieldWidth = 1920 - 16;
+		scoreText.y = Main.HEIGHT - scoreText.size - 16;
+		scoreText.fieldWidth = Main.WIDTH - 16;
 		add(scoreText);
+
+		if (timeLimit > 0)
+		{
+			var timer:Timer = new Timer(timeLimit, timeOver);
+			timer.x = 16;
+			timer.y = 16;
+			add(timer);
+		}
 	}
 
 	override public function update(elapsed:Float)
@@ -89,5 +100,13 @@ class PlayState extends FlxState
 	private function createScoreIncrement():ScoreIncrement
 	{
 		return new ScoreIncrement();
+	}
+
+	private function timeOver():Void
+	{
+		var ss:SubmitScoreSubState = new SubmitScoreSubState();
+		ss.score = score;
+		ss.token = scoreToken;
+		openSubState(ss);
 	}
 }
