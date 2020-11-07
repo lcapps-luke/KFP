@@ -93,14 +93,23 @@ class MenuState extends FlxState
 
 			scoreLines.clear();
 
+			var names:Array<String> = new Array<String>();
+
 			var yy:Float = 72;
 			for (i in list)
 			{
+				if (names.contains(i.name))
+				{
+					continue;
+				}
+
 				var s = new ScoreLine(i.name, i.value);
 				s.x = Main.WIDTH - Main.WIDTH / 4;
 				s.y = yy;
 				scoreLines.add(s);
 				add(s);
+
+				names.push(i.name);
 
 				yy += s.height;
 				if (yy > Main.HEIGHT - s.height)

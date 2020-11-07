@@ -11,8 +11,11 @@ class ScoreClient
 	public static function getToken(callback:String->Void):Void
 	{
 		var req = new Http('$root/token');
+		#if js
 		req.async = true;
+		#end
 		req.onData = callback;
+
 		req.onError = function(msg:String)
 		{
 			callback(null);
@@ -24,7 +27,9 @@ class ScoreClient
 	public static function submit(token:String, name:String, score:Int, callback:Bool->Void):Void
 	{
 		var req = new Http('$root');
+		#if js
 		req.async = true;
+		#end
 		req.addHeader("Content-Type", "application/json");
 		req.setPostData(Json.stringify({
 			token: token,
@@ -44,9 +49,10 @@ class ScoreClient
 	public static function listScores(callback:Array<Score>->Void):Void
 	{
 		var req = new Http('$root');
-		req.addParameter("from", (DateTime.now() - Hour(12)).toString());
+		req.addParameter("from", (DateTime.now() - Day(30)).toString());
+		#if js
 		req.async = true;
-
+		#end
 		req.onData = function(data:String)
 		{
 			var scores:Array<Score> = cast Json.parse(data);
