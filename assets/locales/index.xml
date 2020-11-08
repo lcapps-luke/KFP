@@ -9,6 +9,7 @@
 		<label id="en-GB" language="English" region="Great Britain"/>
 		<label id="es-ES" language="Spanish" region="Spain"/>
 		<label id="ja-JP" language="Japanese" region="Japan"/>
+		<label id="de-DE" language="German" region="Germany"/>
 	</locale>
 
 	<locale id="ja-JP" is_default="false" sort="1">
@@ -17,6 +18,7 @@
 		<label id="en-GB" language="英語" region="英吉利"/>
 		<label id="es-ES" language="スペイン語" region="スペイン"/>
 		<label id="ja-JP" language="日本語" region="日本"/>
+		<label id="de-DE" language="German" region="Germany"/>
 	</locale>
 
 	<locale id="es-ES" is_default="false" sort="2">
@@ -25,6 +27,16 @@
 		<label id="en-GB" language="Inglés" region="Gran Bretaña"/>
 		<label id="es-ES" language="Español" region="España"/>
 		<label id="ja-JP" language="Japonés" region="Japón"/>
+		<label id="de-DE" language="German" region="Germany"/>
+	</locale>
+
+	<locale id="de-DE" is_default="false" sort="3">
+		<contributors value="Luke Cann"/>
+		<ui language="Sprache" region="Region" accept="In Ordnung"/>
+		<label id="en-GB" language="Englisch" region="Großbritannien"/>
+		<label id="es-ES" language="Spanisch" region="Spanien"/>
+		<label id="ja-JP" language="Japanisch" region="Japan"/>
+		<label id="de-DE" language="Deutsch" region="Deutschland"/>
 	</locale>
 
 </data>
